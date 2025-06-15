@@ -10,8 +10,10 @@
 	</filter>
 
 <!-- Uncomment this to reproduce the bug -->
+<!-- 
 	<filter-mapping>
 		<filter-name>logging-filter</filter-name>
 		<url-pattern>/rest/*</url-pattern>
 	</filter-mapping>
+ -->
 </web-app>
