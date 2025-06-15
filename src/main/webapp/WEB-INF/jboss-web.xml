@@ -1,0 +1,3 @@
+<jboss-web>
+  <context-root>/sse</context-root>
+</jboss-web>

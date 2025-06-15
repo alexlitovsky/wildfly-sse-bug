@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SSE Example</title>
+</head>
+<body>
+    <h1>Server Sent Events</h1>
+    <ul id="event-list"></ul>
+    <script>
+        const eventSource = new EventSource('./rest/notifications');
+        const eventList = document.getElementById('event-list');
+        
+        eventSource.onmessage = (event) => {
+           const newElement = document.createElement('li');
+           newElement.textContent = `Message: ${event.data}`;
+           eventList.appendChild(newElement);
+        };
+        
+        eventSource.onerror = (error) => {
+            console.error('SSE error:', error);
+            eventSource.close();
+        };
+    </script>
+</body>
+</html>
